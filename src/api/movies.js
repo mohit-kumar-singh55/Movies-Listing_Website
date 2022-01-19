@@ -3,7 +3,7 @@ const apiDomain = "https://api.themoviedb.org/3/";
 
 export const getPopularMovies = async (page = 1) => {
     try {
-        const response = await fetch(`${apiDomain}movie/popular?api_key=${apiKey}&language=en-US&page=${page}`);
+        const response = await fetch(`${apiDomain}movie/popular?api_key=${apiKey}&page=${page}`);
         const data = await response.json();
 
         return data;

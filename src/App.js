@@ -1,11 +1,21 @@
-import './App.css';
-import Navbar from './components/Navbar';
+import Navbar from './components/Navbar/Navbar';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from './components/Home/Home';
+import MoviePage from "./components/MoviePage/MoviePage";
+import Explore from "./components/Explore/Explore";
 
 function App() {
   return (
-    <div className="App">
-      <Navbar />
-    </div>
+    <Router>
+      <div className="App">
+        <Navbar />
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path="/movie/:movieId" element={<MoviePage />} />
+          <Route path="/explore" element={<Explore />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
